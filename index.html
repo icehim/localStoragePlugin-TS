@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="module">
+    import {Storage} from "./dist/index.js";
+
+    const ls = new Storage()
+    ls.set('a', 123, new Date().getTime() + 5000)
+
+    setInterval(() => {
+        let a = ls.get('a')
+        console.log(a)
+    }, 1000)
+</script>
+</body>
+</html>
